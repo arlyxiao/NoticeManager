@@ -21,7 +21,8 @@ public class NewMessageReceiver extends BroadcastReceiver {
             Bundle bundle = intent.getExtras();
             String message = bundle.getString("message");
 
-            KCMessagePushManager.notice_new_message(context, message);
+            KCMessagePushManager manager = new KCMessagePushManager();
+            manager.notice_new_message(context, message);
 
         }
 

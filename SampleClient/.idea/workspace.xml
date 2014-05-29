@@ -104,7 +104,7 @@
       <file leaf-file-name="NewMessageReceiver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/NewMessageReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="535" selection-end="535" vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="646">
+            <state line="17" column="36" selection-start="475" selection-end="475" vertical-scroll-proportion="0.0" vertical-offset="8" max-vertical-offset="665">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -112,42 +112,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values-v11/styles.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="26" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="190">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_main.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/menu/activity_main.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="228">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values-v14/styles.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="12" selection-start="104" selection-end="104" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="190">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyService.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MyService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MyService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="28" selection-start="1776" selection-end="1776" vertical-scroll-proportion="0.3729373" vertical-offset="1275" max-vertical-offset="2622">
+            <state line="65" column="23" selection-start="1685" selection-end="1685" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="1672">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1409#1533#0" expanded="true" />
-                <element signature="e#1522#1523#0" expanded="true" />
+                <element signature="e#1503#1658#0" expanded="true" />
+                <element signature="e#1647#1648#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageListener.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MessageListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="56" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="304">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MessageNotice.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MessageNotice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="32" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="456">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -155,16 +146,16 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="1153" selection-end="1153" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="589">
+            <state line="31" column="65" selection-start="935" selection-end="935" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="589">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KCMessagePushManager.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="KCMessagePushManager.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/KCMessagePushManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="33" selection-start="334" selection-end="354" vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="1140">
+            <state line="155" column="1" selection-start="4568" selection-end="4568" vertical-scroll-proportion="0.84653467" vertical-offset="2432" max-vertical-offset="3078">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -185,17 +176,19 @@
         <option value="$PROJECT_DIR$/src/com/example/sampleclient/StartMyServiceAtBootReceiver.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/example/sampleclient/MainActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/example/sampleclient/KCMessagePushManager.java" />
-        <option value="$PROJECT_DIR$/src/com/example/sampleclient/NewMessageReceiver.java" />
-        <option value="$PROJECT_DIR$/res/values-v11/styles.xml" />
         <option value="$PROJECT_DIR$/res/values-v14/styles.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/sampleclient/NewMessageReceiver.java" />
         <option value="$PROJECT_DIR$/src/com/example/sampleclient/MyService.java" />
+        <option value="$PROJECT_DIR$/res/values-v11/styles.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/sampleclient/MessageNotice.java" />
+        <option value="$PROJECT_DIR$/src/com/example/sampleclient/MessageListener.java" />
+        <option value="$PROJECT_DIR$/src/com/example/sampleclient/KCMessagePushManager.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="22" />
+    <option name="x" value="38" />
+    <option name="y" value="80" />
     <option name="width" value="1420" />
     <option name="height" value="767" />
   </component>
@@ -437,8 +430,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="22" width="1420" height="767" extended-state="0" />
-    <editor active="false" />
+    <frame x="38" y="80" width="1420" height="767" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -553,38 +546,10 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="65" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1178">
-          <folding>
-            <element signature="e#491#509#0" expanded="true" />
-            <element signature="e#637#666#0" expanded="true" />
-            <element signature="e#1003#1015#0" expanded="true" />
-            <element signature="e#1633#1653#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1153" selection-end="1153" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="589">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/TargetActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="13" selection-start="147" selection-end="147" vertical-scroll-proportion="0.21486267" vertical-offset="0" max-vertical-offset="619">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/KCMessagePushManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="33" selection-start="334" selection-end="354" vertical-scroll-proportion="0.0" vertical-offset="190" max-vertical-offset="1140">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -597,43 +562,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values-v11/styles.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="26" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="190">
+        <state line="31" column="65" selection-start="935" selection-end="935" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="589">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/menu/activity_main.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MyService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="228">
+        <state line="65" column="23" selection-start="1685" selection-end="1685" vertical-scroll-proportion="0.0" vertical-offset="882" max-vertical-offset="1672">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1503#1658#0" expanded="true" />
+            <element signature="e#1647#1648#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values-v11/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="12" selection-start="90" selection-end="90" vertical-scroll-proportion="0.12277868" vertical-offset="0" max-vertical-offset="619">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values-v14/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="12" selection-start="104" selection-end="104" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="190">
+        <state line="4" column="12" selection-start="104" selection-end="104" vertical-scroll-proportion="0.12277868" vertical-offset="0" max-vertical-offset="619">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/menu/activity_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="0.03069467" vertical-offset="0" max-vertical-offset="619">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="65" selection-start="324" selection-end="324" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1178">
+          <folding>
+            <element signature="e#491#509#0" expanded="true" />
+            <element signature="e#637#666#0" expanded="true" />
+            <element signature="e#1003#1015#0" expanded="true" />
+            <element signature="e#1633#1653#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/NewMessageReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="535" selection-end="535" vertical-scroll-proportion="0.0" vertical-offset="27" max-vertical-offset="646">
+        <state line="17" column="36" selection-start="475" selection-end="475" vertical-scroll-proportion="0.0" vertical-offset="8" max-vertical-offset="665">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MyService.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MessageNotice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="28" selection-start="1776" selection-end="1776" vertical-scroll-proportion="0.3729373" vertical-offset="1275" max-vertical-offset="2622">
+        <state line="14" column="32" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="456">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MessageListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="56" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="304">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/KCMessagePushManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="155" column="1" selection-start="4568" selection-end="4568" vertical-scroll-proportion="0.84653467" vertical-offset="2432" max-vertical-offset="3078">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1409#1533#0" expanded="true" />
-            <element signature="e#1522#1523#0" expanded="true" />
           </folding>
         </state>
       </provider>
