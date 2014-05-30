@@ -37,11 +37,16 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class KCMessagePushManager {
+    Context context;
     public MessageListener message_listener;
     public String url;
     public int period;
     public int delay;
     public int notification_icon;
+
+    public KCMessagePushManager(Context context) {
+        this.context = context;
+    }
 
     public void set_listen_url(String url) {
         this.url = url;
@@ -227,7 +232,7 @@ public class KCMessagePushManager {
     }
 
 
-    public void start(Context context) {
+    public void start() {
         Intent intent_service = new Intent(context, MessageNoticeService.class);
         context.startService(intent_service);
         context.bindService(intent_service, mConnection, Context.BIND_AUTO_CREATE);

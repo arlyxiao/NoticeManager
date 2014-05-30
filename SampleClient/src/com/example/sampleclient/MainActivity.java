@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        manager = new KCMessagePushManager();
+        manager = new KCMessagePushManager(MainActivity.this);
 
         manager.set_listen_url("http://192.168.1.101:3000");
         manager.set_notification_icon(R.drawable.ic_launcher);
@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        manager.start(MainActivity.this);
+        manager.start();
     }
 
     @Override
