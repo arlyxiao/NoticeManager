@@ -4,10 +4,12 @@ package com.example.sampleclient;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.Service;
 import android.content.ComponentName;
 import android.content.ContextWrapper;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Environment;
 import android.support.v4.app.NotificationCompat;
 
@@ -32,7 +34,8 @@ import java.io.Writer;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-public class KCMessagePushManager implements MessageListener {
+public class KCMessagePushManager {
+    public MessageListener message_listener;
     public String url;
     public int period;
     public int delay;
@@ -71,12 +74,13 @@ public class KCMessagePushManager implements MessageListener {
     }
 
 
-
-    public void add_message_listener() {
-
+    public void add_message_listener(MessageListener message_listener) {
+//        String message_json = get_message();
+//        listener.build_notification(message_json);
+        this.message_listener = message_listener;
     }
 
-    public String get_message(Context context) {
+    public String get_message() {
 //        String img_url;
 //        String title;
 //        String desc;
@@ -94,38 +98,46 @@ public class KCMessagePushManager implements MessageListener {
             String message_json = convert_string(response.getEntity().getContent());
             Log.i("从服务器收到的消息 ", message_json);
 
-            try {
-//                JsonParser parser = new JsonParser();
-//                JsonObject message_data;
 
-//                message_data = parser.parse(message_json).getAsJsonObject();
-//                img_url = message_data.get("img_url").getAsString();
-//                title = message_data.get("title").toString();
-//                desc = message_data.get("desc").toString();
-//                other = message_data.get("other").toString();
 
-//                Log.i("消息 img_url", img_url);
-//                Log.i("消息 title", title);
-//                Log.i("消息 desc", desc);
-//                Log.i("消息 other", other);
+//            try {
+////                JsonParser parser = new JsonParser();
+////                JsonObject message_data;
+//
+////                message_data = parser.parse(message_json).getAsJsonObject();
+////                img_url = message_data.get("img_url").getAsString();
+////                title = message_data.get("title").toString();
+////                desc = message_data.get("desc").toString();
+////                other = message_data.get("other").toString();
+//
+////                Log.i("消息 img_url", img_url);
+////                Log.i("消息 title", title);
+////                Log.i("消息 desc", desc);
+////                Log.i("消息 other", other);
+//
+////                Intent in = new Intent("app.action.new_message");
+////                in.putExtra("message_json", message_json);
+////                in.putExtra("img_url", img_url);
+////                in.putExtra("title", title);
+////                in.putExtra("desc", desc);
+////                in.putExtra("other", other);
+////                context.sendBroadcast(in);
+//
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//                Log.i("从服务器接收信息错误 ", e.getMessage());
+//            }
 
-                Intent in = new Intent("app.action.new_message");
-                in.putExtra("message_json", message_json);
-//                in.putExtra("img_url", img_url);
-//                in.putExtra("title", title);
-//                in.putExtra("desc", desc);
-//                in.putExtra("other", other);
-                context.sendBroadcast(in);
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            return message_json;
 
         } catch (URISyntaxException e) {
+            e.printStackTrace();
             Log.i("URISyntaxException 错误", e.getMessage());
         } catch (ClientProtocolException e) {
+            e.printStackTrace();
             Log.i("ClientProtocolException 错误", e.getMessage());
         } catch (IOException e) {
+            e.printStackTrace();
             Log.i("IOException 错误", e.getMessage());
         }
 
@@ -152,58 +164,8 @@ public class KCMessagePushManager implements MessageListener {
         }
     }
 
-    public void build_notification(Context context, String message_json) {
-        Notification n;
-        JSONObject message_obj;
-
-        KCMessagePushManager manager = new KCMessagePushManager();
-
-        try {
-            message_obj = new JSONObject(message_json);
-
-            String img_url = message_obj.get("img_url").toString();
-            String title = message_obj.get("title").toString();
-            String desc = message_obj.get("desc").toString();
-            String other = message_obj.get("other").toString();
-
-            Log.i("消息 img_url", img_url);
-            Log.i("消息 title", title);
-            Log.i("消息 desc", desc);
-            Log.i("消息 other", other);
-
-            final ComponentName receiver = new ComponentName(context, TargetActivity.class);
-            Intent notice_intent = new Intent(context.getClass().getName() +
-                    System.currentTimeMillis());
-            notice_intent.setComponent(receiver);
 
 
-            // notice_intent.putExtra("notice_id", notice_id);
-            notice_intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            PendingIntent pIntent = PendingIntent.getActivity(context, 0, notice_intent,
-                    PendingIntent.FLAG_UPDATE_CURRENT);
-
-            n  = new NotificationCompat.Builder(context)
-                    .setContentTitle(title)
-                    .setContentText(desc)
-                    .setSmallIcon(manager.get_notification_icon())
-                    .setContentIntent(pIntent)
-                    .setAutoCancel(true).build();
-
-
-            NotificationManager notificationManager =
-                    (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);
-
-            notificationManager.notify(1, n);
-        } catch (Exception e) {
-            Log.i("获取 json 错误 ", e.getMessage());
-        }
-
-    }
-
-    public MessageNotice build_message(Context context, String message_response) {
-        get_message(context);
-        return null;
-    }
 
 //    public void download_img(Context context, String download_url) {
 //        // String dir = Environment.getExternalStorageDirectory().getPath() + "/sample-notice/";
@@ -260,5 +222,33 @@ public class KCMessagePushManager implements MessageListener {
         } else {
             notificationManager.cancel(notice_id);
         }
+    }
+
+
+    public void start() {
+//        Intent intent_service = new Intent(context, MessageNoticeService.class);
+//        context.startService(intent_service);
+
+
+        new AsyncTask<Void, Void, String>() {
+
+            @Override
+            protected String doInBackground(Void... objects) {
+                return get_message();
+            }
+
+            @Override
+            protected void onPostExecute(String message_response) {
+                super.onPostExecute(message_response);
+
+                if (message_response == null) {
+                    Log.i("无法从服务器获取消息 ", "true");
+                    return;
+                }
+
+                message_listener.build_notification(message_response);
+            }
+        }.execute();
+
     }
 }

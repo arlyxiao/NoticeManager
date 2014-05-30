@@ -8,12 +8,10 @@ import android.os.IBinder;
 import android.util.Log;
 
 public class MessageNoticeService extends Service {
-    KCMessagePushManager manager = new KCMessagePushManager();
+    KCMessagePushManager manager;
 
     @Override
     public void onCreate() {
-        manager.set_listen_url("http://192.168.1.101:3000");
-        manager.set_notification_icon(R.drawable.ic_launcher);
     }
 
     public class LocalBinder extends Binder {
@@ -40,7 +38,7 @@ public class MessageNoticeService extends Service {
         Thread thread = new Thread(new Runnable(){
             @Override
             public void run() {
-                manager.get_message(getApplicationContext());
+                // manager.get_message();
             }
         });
 

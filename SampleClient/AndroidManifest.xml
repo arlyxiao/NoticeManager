@@ -27,7 +27,7 @@
         <activity android:name=".TargetActivity"/>
 
 
-        <service android:name=".MessageNoticeService" android:label="My Service">
+        <service android:name=".MessageNoticeService" android:label="Message Notice Service">
             <intent-filter>
                 <action android:name="com.myapp.MyService" />
             </intent-filter>
@@ -43,16 +43,6 @@
             </intent-filter>
         </receiver>
 
-
-        <receiver
-                android:name=".NewMessageReceiver"
-                android:label="NewMessageReceiver" >
-            <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
-                <action android:name="app.action.new_message" />
-            </intent-filter>
-
-        </receiver>
 
     </application>
 
