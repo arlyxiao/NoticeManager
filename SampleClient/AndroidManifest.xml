@@ -27,7 +27,7 @@
         <activity android:name=".TargetActivity"/>
 
 
-        <service android:name=".MyService" android:label="My Service">
+        <service android:name=".MessageNoticeService" android:label="My Service">
             <intent-filter>
                 <action android:name="com.myapp.MyService" />
             </intent-filter>
