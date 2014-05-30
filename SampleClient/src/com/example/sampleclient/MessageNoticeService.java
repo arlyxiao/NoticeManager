@@ -3,9 +3,13 @@ package com.example.sampleclient;
 
 import android.app.Service;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MessageNoticeService extends Service {
     KCMessagePushManager manager;
@@ -35,16 +39,29 @@ public class MessageNoticeService extends Service {
 //        }, delay, period);
 
 
-        Thread thread = new Thread(new Runnable(){
-            @Override
-            public void run() {
-                // manager.get_message();
-            }
-        });
-
-        thread.start();
-
         return START_REDELIVER_INTENT;
+    }
+
+    public void show_notice(final KCMessagePushManager manager) {
+        new AsyncTask<Void, Void, String>() {
+
+            @Override
+            protected String doInBackground(Void... objects) {
+                return manager.get_message();
+            }
+
+            @Override
+            protected void onPostExecute(String message_response) {
+                super.onPostExecute(message_response);
+
+                if (message_response == null) {
+                    Log.i("无法从服务器获取消息 ", "true");
+                    return;
+                }
+
+                manager.message_listener.build_notification(message_response);
+            }
+        }.execute();
     }
 
     @Override

@@ -15,13 +15,14 @@ import android.view.Menu;
 import org.json.JSONObject;
 
 public class MainActivity extends Activity {
+    KCMessagePushManager manager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        KCMessagePushManager manager = new KCMessagePushManager();
+        manager = new KCMessagePushManager();
 
         manager.set_listen_url("http://192.168.1.101:3000");
         manager.set_notification_icon(R.drawable.ic_launcher);
@@ -32,7 +33,7 @@ public class MainActivity extends Activity {
             }
         });
 
-        manager.start();
+        manager.start(MainActivity.this);
     }
 
     @Override
@@ -69,7 +70,7 @@ public class MainActivity extends Activity {
             n  = new NotificationCompat.Builder(context)
                     .setContentTitle(title)
                     .setContentText(desc)
-                    .setSmallIcon(R.drawable.ic_launcher)
+                    .setSmallIcon(manager.get_notification_icon())
                     .setContentIntent(pIntent)
                     .setAutoCancel(true).build();
 

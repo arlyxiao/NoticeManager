@@ -99,11 +99,8 @@
       <file leaf-file-name="MessageNoticeService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MessageNoticeService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="8" selection-start="841" selection-end="1030" vertical-scroll-proportion="0.0" vertical-offset="502" max-vertical-offset="1197">
-              <folding>
-                <element signature="e#868#1003#0" expanded="true" />
-                <element signature="e#992#993#0" expanded="true" />
-              </folding>
+            <state line="53" column="35" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.0" vertical-offset="478" max-vertical-offset="1444">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -111,10 +108,10 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="46" selection-start="2535" selection-end="2535" vertical-scroll-proportion="0.8432343" vertical-offset="629" max-vertical-offset="1596">
+            <state line="53" column="20" selection-start="1614" selection-end="1614" vertical-scroll-proportion="1.250825" vertical-offset="21" max-vertical-offset="1615">
               <folding>
-                <element signature="e#865#1076#0" expanded="true" />
-                <element signature="e#1065#1066#0" expanded="true" />
+                <element signature="e#878#1089#0" expanded="true" />
+                <element signature="e#1078#1079#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -132,7 +129,7 @@
       <file leaf-file-name="KCMessagePushManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/KCMessagePushManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="237" column="13" selection-start="7336" selection-end="7336" vertical-scroll-proportion="0.0" vertical-offset="2016" max-vertical-offset="4940">
+            <state line="249" column="28" selection-start="7891" selection-end="7891" vertical-scroll-proportion="0.0" vertical-offset="4220" max-vertical-offset="5035">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,8 +163,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="4" />
-    <option name="y" value="24" />
+    <option name="x" value="3" />
+    <option name="y" value="22" />
     <option name="width" value="1420" />
     <option name="height" value="767" />
   </component>
@@ -428,8 +425,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="24" width="1420" height="767" extended-state="0" />
-    <editor active="false" />
+    <frame x="3" y="22" width="1420" height="767" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -548,8 +545,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="65" selection-start="935" selection-end="935" vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="969">
           <folding>
-            <element signature="e#865#1076#0" expanded="true" />
-            <element signature="e#1065#1066#0" expanded="true" />
+            <element signature="e#878#1089#0" expanded="true" />
+            <element signature="e#1078#1079#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -610,25 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MessageNoticeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="8" selection-start="841" selection-end="1030" vertical-scroll-proportion="0.0" vertical-offset="502" max-vertical-offset="1197">
-          <folding>
-            <element signature="e#868#1003#0" expanded="true" />
-            <element signature="e#992#993#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/KCMessagePushManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="237" column="13" selection-start="7336" selection-end="7336" vertical-scroll-proportion="0.0" vertical-offset="2016" max-vertical-offset="4940">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MessageListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="0" selection-start="134" selection-end="134" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="228">
@@ -636,12 +614,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/KCMessagePushManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="249" column="28" selection-start="7891" selection-end="7891" vertical-scroll-proportion="0.0" vertical-offset="4220" max-vertical-offset="5035">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MessageNoticeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="35" selection-start="1277" selection-end="1277" vertical-scroll-proportion="0.0" vertical-offset="478" max-vertical-offset="1444">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="46" selection-start="2535" selection-end="2535" vertical-scroll-proportion="0.8432343" vertical-offset="629" max-vertical-offset="1596">
+        <state line="53" column="20" selection-start="1614" selection-end="1614" vertical-scroll-proportion="1.250825" vertical-offset="21" max-vertical-offset="1615">
           <folding>
-            <element signature="e#865#1076#0" expanded="true" />
-            <element signature="e#1065#1066#0" expanded="true" />
+            <element signature="e#878#1089#0" expanded="true" />
+            <element signature="e#1078#1079#0" expanded="true" />
           </folding>
         </state>
       </provider>

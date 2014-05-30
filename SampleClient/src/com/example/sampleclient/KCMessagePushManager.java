@@ -7,10 +7,12 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.ComponentName;
 import android.content.ContextWrapper;
+import android.content.ServiceConnection;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 
 import android.content.Context;
@@ -225,30 +227,33 @@ public class KCMessagePushManager {
     }
 
 
-    public void start() {
-//        Intent intent_service = new Intent(context, MessageNoticeService.class);
-//        context.startService(intent_service);
-
-
-        new AsyncTask<Void, Void, String>() {
-
-            @Override
-            protected String doInBackground(Void... objects) {
-                return get_message();
-            }
-
-            @Override
-            protected void onPostExecute(String message_response) {
-                super.onPostExecute(message_response);
-
-                if (message_response == null) {
-                    Log.i("无法从服务器获取消息 ", "true");
-                    return;
-                }
-
-                message_listener.build_notification(message_response);
-            }
-        }.execute();
+    public void start(Context context) {
+        Intent intent_service = new Intent(context, MessageNoticeService.class);
+        context.startService(intent_service);
+        context.bindService(intent_service, mConnection, Context.BIND_AUTO_CREATE);
 
     }
+
+    MessageNoticeService m_service;
+    boolean m_bound = false;
+
+    private ServiceConnection mConnection = new ServiceConnection() {
+
+        @Override
+        public void onServiceConnected(ComponentName className,
+                                       IBinder service) {
+            // We've bound to LocalService, cast the IBinder and get LocalService instance
+            MessageNoticeService.LocalBinder binder = (MessageNoticeService.LocalBinder) service;
+            m_service = binder.getService();
+            m_bound = true;
+
+            m_service.show_notice(KCMessagePushManager.this);
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName arg0) {
+            m_bound = false;
+        }
+    };
+
 }
