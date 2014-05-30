@@ -34,7 +34,7 @@
         </service>
 
         <receiver
-                android:name=".StartMyServiceAtBootReceiver"
+                android:name=".StartMessageNoticeServiceAtBootReceiver"
                 android:enabled="true"
                 android:exported="true"
                 android:label="StartMyServiceAtBootReceiver">

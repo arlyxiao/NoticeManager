@@ -87,10 +87,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="79" selection-start="404" selection-end="404" vertical-scroll-proportion="0.21486267" vertical-offset="57" max-vertical-offset="1216">
+            <state line="36" column="49" selection-start="1314" selection-end="1314" vertical-scroll-proportion="0.0" vertical-offset="475" max-vertical-offset="1216">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StartMessageNoticeServiceAtBootReceiver.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/StartMessageNoticeServiceAtBootReceiver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="1" selection-start="521" selection-end="521" vertical-scroll-proportion="0.42972535" vertical-offset="0" max-vertical-offset="619">
               <folding />
             </state>
           </provider>
@@ -175,6 +184,7 @@
         <option value="$PROJECT_DIR$/src/com/example/sampleclient/NewMessageReceiver.java" />
         <option value="$PROJECT_DIR$/src/com/example/sampleclient/MyService.java" />
         <option value="$PROJECT_DIR$/src/com/example/sampleclient/KCMessagePushManager.java" />
+        <option value="$PROJECT_DIR$/src/com/example/sampleclient/StartMessageNoticeServiceAtBootReceiver.java" />
       </list>
     </option>
   </component>
@@ -586,15 +596,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/StartMyServiceAtBootReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="1" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="418">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="76" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0" vertical-offset="247" max-vertical-offset="646">
@@ -670,7 +671,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="79" selection-start="404" selection-end="404" vertical-scroll-proportion="0.21486267" vertical-offset="57" max-vertical-offset="1216">
+        <state line="36" column="49" selection-start="1314" selection-end="1314" vertical-scroll-proportion="0.0" vertical-offset="475" max-vertical-offset="1216">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/StartMessageNoticeServiceAtBootReceiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="1" selection-start="521" selection-end="521" vertical-scroll-proportion="0.42972535" vertical-offset="0" max-vertical-offset="619">
           <folding />
         </state>
       </provider>
