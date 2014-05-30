@@ -99,16 +99,16 @@
       <file leaf-file-name="NewMessageReceiver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/NewMessageReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="0" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="665">
+            <state line="23" column="53" selection-start="753" selection-end="809" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="665">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyService.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MyService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MyService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="0" selection-start="1565" selection-end="1565" vertical-scroll-proportion="0.46042004" vertical-offset="361" max-vertical-offset="1178">
+            <state line="41" column="9" selection-start="1196" selection-end="1196" vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="1178">
               <folding>
                 <marker date="1401431209000" expanded="true" signature="1480:1546" placeholder="{...}" />
                 <marker date="1401431209000" expanded="true" signature="1514:1534" placeholder="{...}" />
@@ -144,10 +144,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KCMessagePushManager.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="KCMessagePushManager.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/KCMessagePushManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="219" column="43" selection-start="6966" selection-end="6966" vertical-scroll-proportion="0.0" vertical-offset="3028" max-vertical-offset="5301">
+            <state line="33" column="0" selection-start="979" selection-end="979" vertical-scroll-proportion="-2.3514853" vertical-offset="2052" max-vertical-offset="5130">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -173,8 +173,8 @@
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/src/com/example/sampleclient/MessageNotice.java" />
         <option value="$PROJECT_DIR$/src/com/example/sampleclient/NewMessageReceiver.java" />
-        <option value="$PROJECT_DIR$/src/com/example/sampleclient/KCMessagePushManager.java" />
         <option value="$PROJECT_DIR$/src/com/example/sampleclient/MyService.java" />
+        <option value="$PROJECT_DIR$/src/com/example/sampleclient/KCMessagePushManager.java" />
       </list>
     </option>
   </component>
@@ -649,28 +649,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="9" selection-start="1196" selection-end="1196" vertical-scroll-proportion="0.0" vertical-offset="95" max-vertical-offset="1178">
+          <folding>
+            <marker date="1401431209000" expanded="true" signature="1480:1546" placeholder="{...}" />
+            <marker date="1401431209000" expanded="true" signature="1514:1534" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/NewMessageReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="438" selection-end="438" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="665">
+        <state line="23" column="53" selection-start="753" selection-end="809" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="665">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/KCMessagePushManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="219" column="43" selection-start="6966" selection-end="6966" vertical-scroll-proportion="0.0" vertical-offset="3028" max-vertical-offset="5301">
+        <state line="33" column="0" selection-start="979" selection-end="979" vertical-scroll-proportion="-2.3514853" vertical-offset="2052" max-vertical-offset="5130">
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="0" selection-start="1565" selection-end="1565" vertical-scroll-proportion="0.46042004" vertical-offset="361" max-vertical-offset="1178">
-          <folding>
-            <marker date="1401431209000" expanded="true" signature="1480:1546" placeholder="{...}" />
-            <marker date="1401431209000" expanded="true" signature="1514:1534" placeholder="{...}" />
           </folding>
         </state>
       </provider>
