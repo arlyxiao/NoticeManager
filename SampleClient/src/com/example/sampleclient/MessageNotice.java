@@ -3,9 +3,6 @@ package com.example.sampleclient;
 
 public class MessageNotice {
 
-    // 显示在通知栏信息左侧
-    public String img_url;
-
     // 显示在通知栏信息右侧上面
     public String title;
 

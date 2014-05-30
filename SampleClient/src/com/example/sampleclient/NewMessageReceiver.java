@@ -19,10 +19,14 @@ public class NewMessageReceiver extends BroadcastReceiver {
             Log.i("新消息提示通知正常运行 ", "true");
 
             Bundle bundle = intent.getExtras();
-            String message = bundle.getString("message");
+//            String img_url = bundle.getString("img_url");
+//            String title = bundle.getString("title");
+//            String desc = bundle.getString("desc");
+//            String other = bundle.getString("other");
+            String message_json = bundle.getString("message_json");
 
             KCMessagePushManager manager = new KCMessagePushManager();
-            manager.notice_new_message(context, message);
+            manager.build_notification(context, message_json);
 
         }
 

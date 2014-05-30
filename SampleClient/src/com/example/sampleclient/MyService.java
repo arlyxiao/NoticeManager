@@ -28,11 +28,12 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MyService  extends Service {
-    KCMessagePushManager manager;
+    KCMessagePushManager manager = new KCMessagePushManager();
 
     @Override
     public void onCreate() {
-        manager.set_listen_url("http://192.168.1.100:3000");
+        manager.set_listen_url("http://192.168.1.101:3000");
+        manager.set_notification_icon(R.drawable.ic_launcher);
     }
 
     public class LocalBinder extends Binder {
@@ -45,9 +46,9 @@ public class MyService  extends Service {
     public int onStartCommand(final Intent intent, int flags, int startId) {
         Log.i("服务开始启动了 ", "true");
 
-        int delay = 3000;
-        int period = 1000;
-
+//        int delay = 3000;
+//        int period = 1000;
+//
 //        Timer timer = new Timer();
 //        timer.scheduleAtFixedRate(new TimerTask() {
 //            public void run() {
