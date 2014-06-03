@@ -35,6 +35,7 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.UUID;
 
 public class KCMessagePushManager {
     Context context;
@@ -53,7 +54,9 @@ public class KCMessagePushManager {
     }
 
     public String get_listen_url() {
-        return this.url;
+        String server_url = this.url + "?token=" + generate_token();
+        Log.i("服务器URL  ", server_url);
+        return server_url;
     }
 
     public void set_period(int period) {
@@ -167,6 +170,11 @@ public class KCMessagePushManager {
         } else {
             return "";
         }
+    }
+
+    public String generate_token() {
+        // return UUID.randomUUID().toString();
+        return "thisisforrepeatnotice";
     }
 
 

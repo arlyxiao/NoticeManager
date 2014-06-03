@@ -105,10 +105,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="0" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.2689769" vertical-offset="673" max-vertical-offset="2204">
+            <state line="24" column="0" selection-start="700" selection-end="700" vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="2204">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,10 +125,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KCMessagePushManager.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="KCMessagePushManager.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/KCMessagePushManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="252" column="24" selection-start="7883" selection-end="7883" vertical-scroll-proportion="0.0" vertical-offset="3764" max-vertical-offset="4465">
+            <state line="168" column="37" selection-start="5104" selection-end="5104" vertical-scroll-proportion="0.36468646" vertical-offset="2325" max-vertical-offset="4598">
               <folding />
             </state>
           </provider>
@@ -152,10 +152,10 @@
         <option value="$PROJECT_DIR$/src/com/example/sampleclient/StartMessageNoticeServiceAtBootReceiver.java" />
         <option value="$PROJECT_DIR$/src/com/example/sampleclient/NewMessageReceiver.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/sampleclient/KCMessagePushManager.java" />
         <option value="$PROJECT_DIR$/src/com/example/sampleclient/MessageListener.java" />
         <option value="$PROJECT_DIR$/src/com/example/sampleclient/MessageNoticeService.java" />
         <option value="$PROJECT_DIR$/src/com/example/sampleclient/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/sampleclient/KCMessagePushManager.java" />
       </list>
     </option>
   </component>
@@ -622,13 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/KCMessagePushManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="252" column="24" selection-start="7883" selection-end="7883" vertical-scroll-proportion="0.0" vertical-offset="3764" max-vertical-offset="4465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MessageNoticeService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="56" column="0" selection-start="1399" selection-end="1399" vertical-scroll-proportion="0.0" vertical-offset="573" max-vertical-offset="1501">
@@ -645,10 +638,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.2689769" vertical-offset="673" max-vertical-offset="2204">
+        <state line="24" column="0" selection-start="700" selection-end="700" vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="2204">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/sampleclient/KCMessagePushManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="168" column="37" selection-start="5104" selection-end="5104" vertical-scroll-proportion="0.36468646" vertical-offset="2325" max-vertical-offset="4598">
+          <folding />
         </state>
       </provider>
     </entry>
