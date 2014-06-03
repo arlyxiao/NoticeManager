@@ -1,4 +1,4 @@
-package com.example.sampleclient;
+package com.example.samplelib;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -22,6 +22,9 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         manager = new KCMessagePushManager(MainActivity.this);
+
+        manager.set_delay(5000);
+        manager.set_period(1000);
 
         manager.set_listen_url("http://192.168.1.100:3000");
         manager.set_notification_icon(R.drawable.ic_launcher);

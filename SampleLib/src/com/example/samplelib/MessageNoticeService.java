@@ -1,4 +1,4 @@
-package com.example.sampleclient;
+package com.example.samplelib;
 
 
 import android.app.PendingIntent;
@@ -8,9 +8,6 @@ import android.os.AsyncTask;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class MessageNoticeService extends Service {
     KCMessagePushManager manager;
@@ -29,21 +26,16 @@ public class MessageNoticeService extends Service {
     public int onStartCommand(final Intent intent, int flags, int startId) {
         Log.i("服务开始启动了 ", "true");
 
-//        int delay = 3000;
-//        int period = 1000;
-//
-//        Timer timer = new Timer();
-//        timer.scheduleAtFixedRate(new TimerTask() {
-//            public void run() {
-//
-//            }
-//        }, delay, period);
-
+        if (manager != null) {
+            show_notice(manager);
+        }
 
         return START_REDELIVER_INTENT;
     }
 
     public void show_notice(final KCMessagePushManager manager) {
+        this.manager = manager;
+
         new AsyncTask<Void, Void, String>() {
 
             @Override

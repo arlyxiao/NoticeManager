@@ -1,19 +1,9 @@
-package com.example.sampleclient;
+package com.example.samplelib;
 
 
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.app.Service;
 import android.content.ComponentName;
-import android.content.ContextWrapper;
 import android.content.ServiceConnection;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
-import android.os.Environment;
 import android.os.IBinder;
-import android.support.v4.app.NotificationCompat;
 
 import android.content.Context;
 import android.content.Intent;
@@ -24,7 +14,6 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -35,7 +24,8 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.UUID;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class KCMessagePushManager {
     Context context;
@@ -226,23 +216,20 @@ public class KCMessagePushManager {
 
 
 
-    public static void cancel_notice_bar(Context context, int notice_id) {
-        NotificationManager notificationManager =
-                (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);
-
-        if (notice_id == 0) {
-            notificationManager.cancelAll();
-        } else {
-            notificationManager.cancel(notice_id);
-        }
-    }
-
 
     public void start() {
-        Intent intent_service = new Intent(context, MessageNoticeService.class);
-        context.startService(intent_service);
-        context.bindService(intent_service, mConnection, Context.BIND_AUTO_CREATE);
 
+        int delay = get_delay();
+        int period = get_period();
+
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            public void run() {
+                Intent intent_service = new Intent(context, MessageNoticeService.class);
+                context.startService(intent_service);
+                context.bindService(intent_service, mConnection, Context.BIND_AUTO_CREATE);
+            }
+        }, delay, period);
     }
 
     MessageNoticeService m_service;
@@ -253,7 +240,6 @@ public class KCMessagePushManager {
         @Override
         public void onServiceConnected(ComponentName className,
                                        IBinder service) {
-            // We've bound to LocalService, cast the IBinder and get LocalService instance
             MessageNoticeService.LocalBinder binder = (MessageNoticeService.LocalBinder) service;
             m_service = binder.getService();
             m_bound = true;

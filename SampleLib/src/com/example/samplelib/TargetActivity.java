@@ -1,4 +1,4 @@
-package com.example.sampleclient;
+package com.example.samplelib;
 
 import android.app.Activity;
 import android.os.Bundle;
