@@ -82,8 +82,6 @@ public class KCMessagePushManager {
 
 
     public void add_message_listener(MessageListener message_listener) {
-//        String message_json = get_message();
-//        listener.build_notification(message_json);
         this.message_listener = message_listener;
     }
 
