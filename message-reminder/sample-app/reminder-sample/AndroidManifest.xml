@@ -17,14 +17,14 @@
 		android:label="@string/app_name"
 		android:theme="@style/AppTheme">
 
-        <service android:name="com.message.mylib.MessageNoticeService" android:label="Message Notice Service">
+        <service android:name="com.mindpin.android.noticemanager.MessageNoticeService" android:label="Message Notice Service">
             <intent-filter>
                 <action android:name="com.message.mylib.MessageNoticeService" />
             </intent-filter>
         </service>
 
         <receiver
-            android:name="com.message.mylib.StartMessageNoticeServiceAtBootReceiver"
+            android:name="com.mindpin.android.noticemanager.StartMessageNoticeServiceAtBootReceiver"
             android:enabled="true"
             android:exported="true"
             android:label="StartMyServiceAtBootReceiver">

@@ -1,15 +1,13 @@
-package com.message.mylib;
-
+package com.mindpin.android.noticemanager;
 
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.ComponentName;
-import android.content.ServiceConnection;
-import android.os.IBinder;
-
 import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
+import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
@@ -22,17 +20,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.Timer;
-import java.util.TimerTask;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;

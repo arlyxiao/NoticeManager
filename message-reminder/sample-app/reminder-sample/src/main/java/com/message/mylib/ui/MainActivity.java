@@ -1,19 +1,18 @@
 package com.message.mylib.ui;
 
-import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
-import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 
-import com.message.mylib.KCMessagePushManager;
-import com.message.mylib.MessageListener;
+
 import com.message.mylib.R;
+import com.mindpin.android.noticemanager.KCMessagePushManager;
+import com.mindpin.android.noticemanager.MessageListener;
 
 
 import org.json.JSONObject;

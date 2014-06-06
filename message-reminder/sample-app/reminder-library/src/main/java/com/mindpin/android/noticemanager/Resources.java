@@ -1,6 +1,8 @@
-package com.message.mylib;
+package com.mindpin.android.noticemanager;
 
 import android.content.Context;
+
+import com.message.mylib.R;
 
 public class Resources
 {

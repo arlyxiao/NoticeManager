@@ -1,4 +1,4 @@
-package com.message.mylib;
+package com.mindpin.android.noticemanager;
 
 
 import android.app.PendingIntent;
