@@ -8,15 +8,15 @@ class HomeController < ApplicationController
     message_json = {:title => '测试 title', :desc => '测试 desc', :other => '测试 other'}
     a_message = token + message_json[:title] + message_json[:desc] + message_json[:other]
     
-    if !has_token_and_message?(a_message)
-      title = '测试 title'
-      desc = '测试 desc'
-      other = '测试 other'
+    return render :nothing => true if has_token_and_message?(a_message)
 
-      render :json => message_json
-    end
+    title = '测试 title'
+    desc = '测试 desc'
+    other = '测试 other'
 
-    render :nothing => true
+    render :json => message_json
+
+    
     
   end
 
@@ -26,10 +26,9 @@ class HomeController < ApplicationController
     open(filename, 'a+') do |f|
       f.each_line do |ff|
         ff = ff.tr("\n","")
-        p ff
-        p a_message
+
         while a_message == ff
-          p '此消息已经发送过'
+          # p '此消息已经发送过'
           return true
         end
       end
