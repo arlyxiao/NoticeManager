@@ -119,10 +119,6 @@ public class KCMessagePushManager {
     }
 
     public String get_message() {
-//        String img_url;
-//        String title;
-//        String desc;
-//        String other;
 
         HttpResponse response;
         try {
@@ -141,36 +137,6 @@ public class KCMessagePushManager {
                 return null;
             }
 
-
-
-//            try {
-////                JsonParser parser = new JsonParser();
-////                JsonObject message_data;
-//
-////                message_data = parser.parse(message_json).getAsJsonObject();
-////                img_url = message_data.get("img_url").getAsString();
-////                title = message_data.get("title").toString();
-////                desc = message_data.get("desc").toString();
-////                other = message_data.get("other").toString();
-//
-////                Log.i("消息 img_url", img_url);
-////                Log.i("消息 title", title);
-////                Log.i("消息 desc", desc);
-////                Log.i("消息 other", other);
-//
-////                Intent in = new Intent("app.action.new_message");
-////                in.putExtra("message_json", message_json);
-////                in.putExtra("img_url", img_url);
-////                in.putExtra("title", title);
-////                in.putExtra("desc", desc);
-////                in.putExtra("other", other);
-////                context.sendBroadcast(in);
-//
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//                Log.i("从服务器接收信息错误 ", e.getMessage());
-//            }
-
             return message_json;
 
         } catch (URISyntaxException e) {
@@ -187,22 +153,14 @@ public class KCMessagePushManager {
         return null;
     }
 
-    public boolean is_json_valid(String test)
-    {
-        try
-        {
+    public boolean is_json_valid(String test) {
+        try {
             new JSONObject(test);
-        }
-        catch(JSONException ex)
-        {
-            // edited, to include @Arthur's comment
-            // e.g. in case JSONArray is valid as well...
-            try
-            {
+        } catch(JSONException ex) {
+            try {
                 new JSONArray(test);
             }
-            catch(JSONException e)
-            {
+            catch(JSONException e) {
                 return false;
             }
         }
@@ -233,55 +191,6 @@ public class KCMessagePushManager {
         // return UUID.randomUUID().toString();
         return "thisisforrepeatnotice";
     }
-
-
-
-
-//    public void download_img(Context context, String download_url) {
-//        // String dir = Environment.getExternalStorageDirectory().getPath() + "/sample-notice/";
-//        ContextWrapper c = new ContextWrapper(context);
-//        String dir = c.getFilesDir().getPath() + "/res/notice";
-//        Log.i("下载的目录 ", dir);
-//
-//        File f = new File(dir);
-//        if (f.isDirectory()) {
-//            Log.i("目录已经存在 ", dir);
-//        } else {
-//            boolean success = f.mkdir();
-//            if (!success) {
-//                Log.i("目录文件没有创建成功 ", "true");
-//            }
-//        }
-//
-//        Log.i("要下载的URL ", download_url);
-//
-//        try {
-//            URL url = new URL(download_url);
-//            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-//            connection.setDoInput(true);
-//            connection.connect();
-//            InputStream input = connection.getInputStream();
-//            Bitmap myBitmap = BitmapFactory.decodeStream(input);
-//
-//            String data1 = String.valueOf(String.format(dir + "%d.jpg", System.currentTimeMillis()));
-//
-//            FileOutputStream stream = new FileOutputStream(data1);
-//
-//            ByteArrayOutputStream outstream = new ByteArrayOutputStream();
-//            myBitmap.compress(Bitmap.CompressFormat.JPEG, 85, outstream);
-//            byte[] byteArray = outstream.toByteArray();
-//
-//            stream.write(byteArray);
-//            stream.close();
-//
-//            Log.i("服务器 img 下载成功 ", "true");
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            Log.i("下载错误 ", e.getMessage());
-//        }
-//    }
-
-
 
 
     public void start() {
