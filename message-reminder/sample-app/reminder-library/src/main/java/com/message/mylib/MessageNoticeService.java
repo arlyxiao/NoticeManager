@@ -56,7 +56,7 @@ public class MessageNoticeService extends Service {
                 PendingIntent p_intent = manager.message_listener
                         .build_pending_intent(message_response);
 
-                manager.message_listener.build_notification(p_intent, message_response);
+                manager.build_notification(p_intent, message_response);
             }
         }.execute();
     }

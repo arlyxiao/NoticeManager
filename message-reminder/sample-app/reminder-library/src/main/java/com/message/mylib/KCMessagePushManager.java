@@ -2,12 +2,15 @@ package com.message.mylib;
 
 
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import org.apache.http.HttpResponse;
@@ -91,6 +94,41 @@ public class KCMessagePushManager {
 
     public void add_message_listener(MessageListener message_listener) {
         this.message_listener = message_listener;
+    }
+
+    public void build_notification(PendingIntent p_intent, String message_response) {
+        try {
+            if (message_response == null) {
+                return;
+            }
+
+            JSONObject message_obj = new JSONObject(message_response);
+
+            String title = message_obj.get("title").toString();
+            String desc = message_obj.get("desc").toString();
+            String other = message_obj.get("other").toString();
+
+            Log.i("消息 title", title);
+            Log.i("消息 desc", desc);
+            Log.i("消息 other", other);
+
+            android.app.Notification n =
+                    new NotificationCompat.Builder(context)
+                            .setContentTitle(title)
+                            .setContentText(desc)
+                            .setSmallIcon(get_notification_icon())
+                            .setContentIntent(p_intent)
+                            .setAutoCancel(true).getNotification();
+
+
+            NotificationManager notificationManager =
+                    (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);
+
+            notificationManager.notify(1, n);
+
+        } catch (Exception e) {
+            Log.i("获取 json 错误 ", e.getMessage());
+        }
     }
 
     public String get_message() {
