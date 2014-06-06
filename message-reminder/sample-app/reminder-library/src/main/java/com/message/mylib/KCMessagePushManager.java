@@ -15,6 +15,9 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -106,7 +109,12 @@ public class KCMessagePushManager {
             response = client.execute(request);
 
             String message_json = convert_string(response.getEntity().getContent());
-            Log.i("从服务器收到的消息 ", message_json);
+
+            Log.i("从服务器收到的消息222 ", message_json);
+
+            if (!is_json_valid(message_json)) {
+                return null;
+            }
 
 
 
@@ -154,6 +162,28 @@ public class KCMessagePushManager {
         return null;
     }
 
+    public boolean is_json_valid(String test)
+    {
+        try
+        {
+            new JSONObject(test);
+        }
+        catch(JSONException ex)
+        {
+            // edited, to include @Arthur's comment
+            // e.g. in case JSONArray is valid as well...
+            try
+            {
+                new JSONArray(test);
+            }
+            catch(JSONException e)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public String convert_string(InputStream inputStream) throws IOException {
         if (inputStream != null) {
             Writer writer = new StringWriter();
@@ -170,7 +200,7 @@ public class KCMessagePushManager {
             }
             return writer.toString();
         } else {
-            return "";
+            return null;
         }
     }
 

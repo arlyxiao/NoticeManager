@@ -26,12 +26,12 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.i("aaaa a aa a ", "true");
+        Log.i("启动 main activity ", "true");
 
         manager = new KCMessagePushManager(getApplicationContext());
 
-        manager.set_delay(5000);
-        manager.set_period(1000);
+        manager.set_delay(10000);
+        manager.set_period(5000);
 
         manager.set_listen_url("http://192.168.1.101:3000");
         manager.set_notification_icon(R.drawable.ic_launcher);
@@ -50,6 +50,9 @@ public class MainActivity extends Activity {
             @Override
             public void build_notification(PendingIntent p_intent, String message_response) {
                 try {
+                    if (message_response == null) {
+                        return;
+                    }
                     Context context = getApplicationContext();
                     JSONObject message_obj = new JSONObject(message_response);
 
@@ -90,6 +93,9 @@ public class MainActivity extends Activity {
         Context context = MainActivity.this;
 
         try {
+            if (message_json == null) {
+                return null;
+            }
             message_obj = new JSONObject(message_json);
 
 
