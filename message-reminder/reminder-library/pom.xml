@@ -69,8 +69,8 @@
                 </executions>
                 <configuration>
                     <ignoreMissingFile>false</ignoreMissingFile>
-                    <file>target/generated-sources/r/com/actionbarsherlock/R.java</file>
-                    <outputFile>target/generated-sources/r/com/actionbarsherlock/R.java</outputFile>
+                    <file>target/generated-sources/r/com/message/mylib/R.java</file>
+                    <outputFile>target/generated-sources/r/com/message/mylib/R.java</outputFile>
                     <regex>false</regex>
                     <token>static final int</token>
                     <value>static int</value>
