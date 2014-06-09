@@ -27,6 +27,12 @@ public/files/*
 public/test/*
 coverage/
 .idea/*
+.idea/
+*.iml
+project.properties
+notice_manager/target/
+
+
 *DS_*
 db/schema.rb
 public/assets/*
