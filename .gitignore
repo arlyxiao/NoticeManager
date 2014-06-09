@@ -30,9 +30,10 @@ coverage/
 .idea/
 *.iml
 project.properties
-notice_manager/target/
-notice_manager-samples/target/
 
+notice_manager/notice_manager-samples/target/
+notice_manager/notice_manager/target/
+notice_manager/notice_manager-parent.iml
 
 *DS_*
 db/schema.rb
