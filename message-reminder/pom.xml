@@ -3,11 +3,7 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <!--<parent>-->
-        <!--<artifactId>android-archetypes</artifactId>-->
-        <!--<groupId>com.github.destinyd.android.archetypes</groupId>-->
-        <!--<version>0.0.3-SNAPSHOT</version>-->
-    <!--</parent>-->
+
     <groupId>com.message</groupId>
     <artifactId>message-reminder-parent</artifactId>
     <version>0.1</version>
@@ -18,14 +14,6 @@
         <module>reminder-library</module>
         <module>reminder-sample</module>
     </modules>
-
-
-    <!--<properties>-->
-    <!--<src.java.version>1.6</src.java.version>-->
-    <!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
-    <!--<platform.version>4.4.2_r2</platform.version>-->
-    <!--<android.plugin.version>3.8.1</android.plugin.version>-->
-    <!--</properties>-->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
