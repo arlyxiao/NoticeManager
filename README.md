@@ -9,7 +9,7 @@ NoticeManager implements a quick android notification component. When the androi
 Based on rails. need to start it by rails s 
 
 
-### message-reminder:
+### notice_manager:
 
 One sample project to use the library. Based maven to build the project.
 
