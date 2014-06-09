@@ -24,17 +24,7 @@
             <version>${android.version}</version>
             <scope>provided</scope>
         </dependency>
-        <!--<dependency>-->
-        <!--<groupId>android</groupId>-->
-        <!--<artifactId>android</artifactId>-->
-        <!--<version>${platform.version}</version>-->
-        <!--<scope>provided</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-        <!--<groupId>android.support</groupId>-->
-        <!--<artifactId>compatibility-v4</artifactId>-->
-        <!--<version>${compatibility-v4.version}</version>-->
-        <!--</dependency>-->
+        
         <dependency>
             <groupId>com.google.android</groupId>
             <artifactId>support-v4</artifactId>
@@ -102,11 +92,7 @@
                                     <type>jar</type>
                                     <file>${project.build.directory}/${project.build.finalName}.jar</file>
                                 </artifact>
-                                <!--<artifact>-->
-                                    <!--<type>aar</type>-->
-                                    <!--<file>${project.basedir}/build/libs/${project.artifactId}-${gradle.version}.aar-->
-                                    <!--</file>-->
-                                <!--</artifact>-->
+
                             </artifacts>
                         </configuration>
                     </execution>

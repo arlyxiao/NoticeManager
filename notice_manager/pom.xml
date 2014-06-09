@@ -3,11 +3,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-    <artifactId>android-archetypes</artifactId>
-    <groupId>com.github.destinyd.android.archetypes</groupId>
-    <version>0.0.3-SNAPSHOT</version>
-  </parent>
+
 	<groupId>com.mindpin.android</groupId>
 	<artifactId>notice_manager-parent</artifactId>
 	<version>0.1</version>
@@ -19,13 +15,6 @@
 		<module>notice_manager-samples</module>
 	</modules>
 
-
-	<!--<properties>-->
-		<!--<src.java.version>1.6</src.java.version>-->
-		<!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
-		<!--<platform.version>4.4.2_r2</platform.version>-->
-		<!--<android.plugin.version>3.8.1</android.plugin.version>-->
-	<!--</properties>-->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -45,17 +34,7 @@
                 <version>${android.version}</version>
                 <scope>provided</scope>
             </dependency>
-			<!--<dependency>-->
-                <!--<groupId>android</groupId>-->
-				<!--<artifactId>android</artifactId>-->
-				<!--<version>${platform.version}</version>-->
-				<!--<scope>provided</scope>-->
-			<!--</dependency>-->
-            <!--<dependency>-->
-                <!--<groupId>android.support</groupId>-->
-                <!--<artifactId>compatibility-v4</artifactId>-->
-                <!--<version>${compatibility-v4.version}</version>-->
-            <!--</dependency>-->
+
 			<dependency>
 				<groupId>com.google.android</groupId>
 				<artifactId>support-v4</artifactId>
