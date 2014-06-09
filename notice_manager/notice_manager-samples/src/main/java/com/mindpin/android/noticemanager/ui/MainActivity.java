@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
 
-
 import com.mindpin.android.noticemanager.KCMessagePushManager;
 import com.mindpin.android.noticemanager.MessageListener;
 import com.mindpin.android.noticemanager.R;
