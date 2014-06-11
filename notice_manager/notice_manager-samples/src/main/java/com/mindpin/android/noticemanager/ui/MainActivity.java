@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
         manager.set_delay(3000);
         manager.set_period(5000);
 
-        manager.set_listen_url("http://192.168.1.100:3000");
+        manager.set_listen_url("http://192.168.1.101:3000");
         manager.set_notification_icon(R.drawable.ic_launcher);
         manager.add_message_listener(new MessageListener() {
             @Override

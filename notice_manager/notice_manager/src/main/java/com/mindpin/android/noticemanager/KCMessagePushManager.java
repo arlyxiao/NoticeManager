@@ -7,6 +7,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
@@ -31,6 +32,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.UUID;
 
 public class KCMessagePushManager {
     Context context;
@@ -188,8 +190,31 @@ public class KCMessagePushManager {
     }
 
     public String generate_token() {
-        // return UUID.randomUUID().toString();
-        return "thisisforrepeatnotice";
+        String token;
+
+        try {
+
+            SharedPreferences sp0 = context.getSharedPreferences("KCMessagePushManager", 0);
+            token = sp0.getString("customer_token", null);
+
+            Log.i("获取到的 token 值", token);
+
+            return token;
+
+        } catch (Exception e) {
+            Log.i("token 生成错误 ", e.getMessage());
+
+            token = UUID.randomUUID().toString();
+
+            SharedPreferences sp = context.getSharedPreferences("KCMessagePushManager", 0);
+            SharedPreferences.Editor Ed=sp.edit();
+            Ed.putString("customer_token", token);
+            Ed.commit();
+
+            Log.i("新生成的 token 值", token);
+        }
+
+        return token;
     }
 
 

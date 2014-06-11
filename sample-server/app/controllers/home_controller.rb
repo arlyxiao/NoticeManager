@@ -4,7 +4,10 @@ class HomeController < ApplicationController
 
   def index
 
-    token = 'thisisforrepeatnotice'
+    token = params[:token]
+    
+    p token
+
     message_json = {:title => '测试 title', :desc => '测试 desc', :other => '测试 other'}
     a_message = token + message_json[:title] + message_json[:desc] + message_json[:other]
 
