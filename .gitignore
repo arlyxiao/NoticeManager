@@ -34,6 +34,7 @@ project.properties
 notice_manager/notice_manager-samples/target/
 notice_manager/notice_manager/target/
 notice_manager/notice_manager-parent.iml
+notice_manager/sample-server/token_and_message
 
 *DS_*
 db/schema.rb
