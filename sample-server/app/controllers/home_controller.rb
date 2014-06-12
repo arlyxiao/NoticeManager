@@ -5,13 +5,21 @@ class HomeController < ApplicationController
   def index
 
     token = params[:token]
+
+    title = '测试 title'
+    desc = '测试 desc'
+    other = '测试 other'
+
     
     p token
 
-    message_json = {:title => '测试 title1', :desc => '测试 desc', :other => '测试 other'}
-    a_message = token + message_json[:title] + message_json[:desc] + message_json[:other]
+    message_json = {
+      :has_unread => true,
+      :messages => {:title => title, :desc => desc, :other => other}
+    }
+    a_message = token + title + desc + other
 
-    return render :nothing => true if has_token_and_message?(a_message)
+    message_json = {:has_unread => false} if has_token_and_message?(a_message)
 
     render :json => message_json
   end
@@ -26,7 +34,6 @@ class HomeController < ApplicationController
         return true if a_message == ff
       end
 
-      
       f.puts a_message
       false
     end

@@ -93,6 +93,15 @@ public class KCMessagePushManager {
 
             JSONObject message_obj = new JSONObject(message_response);
 
+            Boolean has_unread = message_obj.getBoolean("has_unread");
+            if (!has_unread) {
+                Log.i("暂时没有新消息 ", "true");
+                return;
+            }
+            String messages = message_obj.getString("messages").toString();
+            Log.i("新消息 ", messages);
+            message_obj = new JSONObject(messages);
+
             String title = message_obj.get("title").toString();
             String desc = message_obj.get("desc").toString();
             String other = message_obj.get("other").toString();
@@ -133,7 +142,7 @@ public class KCMessagePushManager {
 
             String message_json = convert_string(response.getEntity().getContent());
 
-            Log.i("从服务器收到的消息222 ", message_json);
+            Log.i("从服务器收到的消息 ", message_json);
 
             if (!is_json_valid(message_json)) {
                 return null;
