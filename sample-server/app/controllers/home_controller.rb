@@ -8,7 +8,7 @@ class HomeController < ApplicationController
     
     p token
 
-    message_json = {:title => '测试 title', :desc => '测试 desc', :other => '测试 other'}
+    message_json = {:title => '测试 title1', :desc => '测试 desc', :other => '测试 other'}
     a_message = token + message_json[:title] + message_json[:desc] + message_json[:other]
 
     return render :nothing => true if has_token_and_message?(a_message)
@@ -23,10 +23,7 @@ class HomeController < ApplicationController
       f.each_line do |ff|
         ff = ff.tr("\n","")
 
-        while a_message == ff
-          # p '此消息已经发送过'
-          return true
-        end
+        return true if a_message == ff
       end
 
       
