@@ -155,7 +155,7 @@ public class KCMessagePushManager {
         return null;
     }
 
-    public boolean is_json_valid(String test) {
+    private boolean is_json_valid(String test) {
         try {
             new JSONObject(test);
         } catch(JSONException ex) {
@@ -169,7 +169,7 @@ public class KCMessagePushManager {
         return true;
     }
 
-    public String convert_string(InputStream inputStream) throws IOException {
+    private String convert_string(InputStream inputStream) throws IOException {
         if (inputStream != null) {
             Writer writer = new StringWriter();
 
@@ -189,7 +189,7 @@ public class KCMessagePushManager {
         }
     }
 
-    public String generate_token() {
+    private String generate_token() {
         String token;
 
         try {
