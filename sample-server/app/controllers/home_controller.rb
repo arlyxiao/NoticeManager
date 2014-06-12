@@ -15,7 +15,9 @@ class HomeController < ApplicationController
 
     message_json = {
       :has_unread => true,
-      :messages => {:title => title, :desc => desc, :other => other}
+      :messages => [
+        {:title => title, :desc => desc, :other => other}
+      ]
     }
     a_message = token + title + desc + other
 

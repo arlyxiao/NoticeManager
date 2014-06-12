@@ -100,7 +100,8 @@ public class KCMessagePushManager {
             }
             String messages = message_obj.getString("messages").toString();
             Log.i("新消息 ", messages);
-            message_obj = new JSONObject(messages);
+            JSONArray messages_obj = message_obj.getJSONArray("messages");
+            message_obj = messages_obj.getJSONObject(0);
 
             String title = message_obj.get("title").toString();
             String desc = message_obj.get("desc").toString();
