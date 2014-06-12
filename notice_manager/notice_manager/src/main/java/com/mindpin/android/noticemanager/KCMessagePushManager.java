@@ -101,29 +101,35 @@ public class KCMessagePushManager {
             String messages = message_obj.getString("messages").toString();
             Log.i("新消息 ", messages);
             JSONArray messages_obj = message_obj.getJSONArray("messages");
-            message_obj = messages_obj.getJSONObject(0);
 
-            String title = message_obj.get("title").toString();
-            String desc = message_obj.get("desc").toString();
-            String other = message_obj.get("other").toString();
+            for (int i = 0; i < messages_obj.length(); i++) {
 
-            Log.i("消息 title", title);
-            Log.i("消息 desc", desc);
-            Log.i("消息 other", other);
+                message_obj = messages_obj.getJSONObject(i);
 
-            android.app.Notification n =
-                    new NotificationCompat.Builder(context)
-                            .setContentTitle(title)
-                            .setContentText(desc)
-                            .setSmallIcon(get_notification_icon())
-                            .setContentIntent(p_intent)
-                            .setAutoCancel(true).getNotification();
+                String title = message_obj.get("title").toString();
+                String desc = message_obj.get("desc").toString();
+                String other = message_obj.get("other").toString();
+
+                Log.i("消息 title", title);
+                Log.i("消息 desc", desc);
+                Log.i("消息 other", other);
+
+                android.app.Notification notice =
+                        new NotificationCompat.Builder(context)
+                                .setContentTitle(title)
+                                .setContentText(desc)
+                                .setSmallIcon(get_notification_icon())
+                                .setContentIntent(p_intent)
+                                .setAutoCancel(true).getNotification();
 
 
-            NotificationManager notificationManager =
-                    (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);
+                NotificationManager notificationManager =
+                        (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);
 
-            notificationManager.notify(1, n);
+                notificationManager.notify(i, notice);
+
+            }
+
 
         } catch (Exception e) {
             Log.i("获取 json 错误 ", e.getMessage());
