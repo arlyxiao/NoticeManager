@@ -30,9 +30,11 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.UUID;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class KCMessagePushManager {
     Context context;
@@ -102,7 +104,7 @@ public class KCMessagePushManager {
             Log.i("新消息 ", messages);
             JSONArray messages_obj = message_obj.getJSONArray("messages");
 
-            for (int i = 0; i < messages_obj.length(); i++) {
+            for (int i = 1; i <= messages_obj.length(); i++) {
 
                 message_obj = messages_obj.getJSONObject(i);
 
@@ -126,7 +128,14 @@ public class KCMessagePushManager {
                 NotificationManager notificationManager =
                         (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);
 
-                notificationManager.notify(i, notice);
+
+
+                Random rand = new Random();
+
+                int id = rand.nextInt(40000);
+                Log.i("通知 id ", Integer.toString(id));
+
+                notificationManager.notify(id, notice);
 
             }
 
