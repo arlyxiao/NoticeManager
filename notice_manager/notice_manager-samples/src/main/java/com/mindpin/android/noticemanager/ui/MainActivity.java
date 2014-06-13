@@ -9,11 +9,14 @@ import android.app.Activity;
 import android.util.Log;
 
 import com.mindpin.android.noticemanager.KCMessagePushManager;
+import com.mindpin.android.noticemanager.Message;
 import com.mindpin.android.noticemanager.MessageListener;
 import com.mindpin.android.noticemanager.R;
 
 
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class MainActivity extends Activity {
     KCMessagePushManager manager;
@@ -34,7 +37,7 @@ public class MainActivity extends Activity {
         manager.set_notification_icon(R.drawable.ic_launcher);
         manager.add_message_listener(new MessageListener() {
             @Override
-            public PendingIntent build_pending_intent(String message_response) {
+            public PendingIntent build_pending_intent(ArrayList<Message> message_response) {
 
                 PendingIntent pending_intent =
                         MainActivity.this.build_pending_intent(message_response);
@@ -50,16 +53,13 @@ public class MainActivity extends Activity {
     }
 
 
-    public PendingIntent build_pending_intent(String message_json) {
-        JSONObject message_obj;
+    public PendingIntent build_pending_intent(ArrayList<Message> message_response) {
         Context context = MainActivity.this;
 
         try {
-            if (message_json == null) {
+            if (message_response == null) {
                 return null;
             }
-            message_obj = new JSONObject(message_json);
-
 
             final ComponentName receiver = new ComponentName(context, TargetActivity.class);
             Intent notice_intent = new Intent(context.getClass().getName() +

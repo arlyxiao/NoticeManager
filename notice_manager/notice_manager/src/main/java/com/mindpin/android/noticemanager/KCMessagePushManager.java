@@ -30,6 +30,7 @@ import java.io.StringWriter;
 import java.io.Writer;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -87,30 +88,19 @@ public class KCMessagePushManager {
         this.message_listener = message_listener;
     }
 
-    public void build_notification(PendingIntent p_intent, String message_response) {
+    public void build_notification(PendingIntent p_intent, ArrayList<Message> message_response) {
         try {
             if (message_response == null) {
                 return;
             }
 
-            JSONObject message_obj = new JSONObject(message_response);
+            for (int i = 0; i < message_response.size(); i++) {
 
-            Boolean has_unread = message_obj.getBoolean("has_unread");
-            if (!has_unread) {
-                Log.i("暂时没有新消息 ", "true");
-                return;
-            }
-            String messages = message_obj.getString("messages").toString();
-            Log.i("新消息 ", messages);
-            JSONArray messages_obj = message_obj.getJSONArray("messages");
+                Message message = message_response.get(i);
 
-            for (int i = 0; i < messages_obj.length(); i++) {
-
-                message_obj = messages_obj.getJSONObject(i);
-
-                String title = message_obj.get("title").toString();
-                String desc = message_obj.get("desc").toString();
-                String other = message_obj.get("other").toString();
+                String title = message.title;
+                String desc = message.desc;
+                String other = message.other;
 
                 Log.i("消息 title", title);
                 Log.i("消息 desc", desc);
@@ -145,8 +135,7 @@ public class KCMessagePushManager {
         }
     }
 
-    public String get_message() {
-
+    private String get_message() {
         HttpResponse response;
         try {
             String uri = get_listen_url();
@@ -156,15 +145,15 @@ public class KCMessagePushManager {
             request.setURI(new URI(uri));
             response = client.execute(request);
 
-            String message_json = convert_string(response.getEntity().getContent());
+            String message_list_json = convert_string(response.getEntity().getContent());
 
-            Log.i("从服务器收到的消息 ", message_json);
+            Log.i("从服务器收到的消息 ", message_list_json);
 
-            if (!is_json_valid(message_json)) {
+            if (!is_json_valid(message_list_json)) {
                 return null;
             }
 
-            return message_json;
+            return message_list_json;
 
         } catch (URISyntaxException e) {
             e.printStackTrace();
@@ -178,6 +167,50 @@ public class KCMessagePushManager {
         }
 
         return null;
+    }
+
+    public ArrayList<Message> get_message_list() {
+        JSONObject message_obj;
+        ArrayList<Message> message_list = new ArrayList<Message>();
+
+        String message_list_json = get_message();
+        try {
+            JSONObject message_list_obj = new JSONObject(message_list_json);
+
+            Boolean has_unread = message_list_obj.getBoolean("has_unread");
+            if (!has_unread) {
+                Log.i("暂时没有新消息 ", "true");
+                return null;
+            }
+            String messages = message_list_obj.getString("messages").toString();
+            Log.i("新消息 ", messages);
+            JSONArray messages_list = message_list_obj.getJSONArray("messages");
+
+            for (int i = 0; i < messages_list.length(); i++) {
+
+                message_obj = messages_list.getJSONObject(i);
+
+                Message message = new Message();
+                message.title = message_obj.get("title").toString();
+                message.desc = message_obj.get("desc").toString();
+                message.other = message_obj.get("other").toString();
+
+                Log.i("消息 title", message.title);
+                Log.i("消息 desc", message.desc);
+                Log.i("消息 other", message.other);
+
+                message_list.add(message);
+            }
+
+            return message_list;
+
+        } catch (Exception e) {
+            Log.i("获取 json 错误 ", "true");
+
+        }
+
+        return null;
+
     }
 
     private boolean is_json_valid(String test) {

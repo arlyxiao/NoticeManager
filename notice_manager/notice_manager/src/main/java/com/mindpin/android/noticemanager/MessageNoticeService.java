@@ -9,6 +9,8 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 public class MessageNoticeService extends Service {
     KCMessagePushManager manager;
 
@@ -37,15 +39,15 @@ public class MessageNoticeService extends Service {
     public void show_notice(final KCMessagePushManager manager) {
         this.manager = manager;
 
-        new AsyncTask<Void, Void, String>() {
+        new AsyncTask<Void, Void, ArrayList<Message>>() {
 
             @Override
-            protected String doInBackground(Void... objects) {
-                return manager.get_message();
+            protected ArrayList<Message> doInBackground(Void... objects) {
+                return manager.get_message_list();
             }
 
             @Override
-            protected void onPostExecute(String message_response) {
+            protected void onPostExecute(ArrayList<Message> message_response) {
                 super.onPostExecute(message_response);
 
                 if (message_response == null) {
