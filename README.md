@@ -52,7 +52,7 @@ interface MessageListener{
   // 当从 listen_url 获取到信息时，会通过这个方法构建通知栏要显示的信息
   // message_response 是从服务端获取的信息元数据
   // 当点击通知栏信息时，会根据这个方法返回的 PendingIntent 打开界面
-  public PendingIntent build_pending_intent(String message_response)
+  public PendingIntent build_pending_intent(Message message_response)
 }
 
 ```
@@ -71,7 +71,7 @@ AndroidManiFest 设置
 同时需要注册
 <service android:name="com.mindpin.android.noticemanager.MessageNoticeService" android:label="Message Notice Service">
     <intent-filter>
-        <action android:name="com.message.mylib.MessageNoticeService" />
+        <action android:name="com.mindpin.android.noticemanager.MessageNoticeService" />
     </intent-filter>
 </service>
 
