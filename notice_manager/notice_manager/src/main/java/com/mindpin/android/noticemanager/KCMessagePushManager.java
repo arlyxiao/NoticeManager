@@ -104,7 +104,7 @@ public class KCMessagePushManager {
             Log.i("新消息 ", messages);
             JSONArray messages_obj = message_obj.getJSONArray("messages");
 
-            for (int i = 1; i <= messages_obj.length(); i++) {
+            for (int i = 0; i < messages_obj.length(); i++) {
 
                 message_obj = messages_obj.getJSONObject(i);
 
@@ -132,7 +132,7 @@ public class KCMessagePushManager {
 
                 Random rand = new Random();
 
-                int id = rand.nextInt(40000);
+                int id = rand.nextInt(999999999);
                 Log.i("通知 id ", Integer.toString(id));
 
                 notificationManager.notify(id, notice);

@@ -17,7 +17,7 @@ class HomeController < ApplicationController
       :has_unread => true,
       :messages => [
         {:title => title, :desc => desc, :other => other},
-        {:title => title + 'sss', :desc => desc, :other => other}
+        {:title => title, :desc => desc, :other => other}
       ]
     }
     a_message = {:token => token, :message_json => message_json}.to_s
