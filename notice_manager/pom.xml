@@ -24,6 +24,7 @@
         <platform.version>4.4.2_r3</platform.version>
         <compatibility-v4.version>19.1.0</compatibility-v4.version>
         <java.version>1.6</java.version>
+        <gson.version>2.2.4</gson.version>
     </properties>
 
 	<dependencyManagement>

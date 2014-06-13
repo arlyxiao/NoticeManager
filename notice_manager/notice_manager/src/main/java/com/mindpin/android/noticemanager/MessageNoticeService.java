@@ -3,20 +3,27 @@ package com.mindpin.android.noticemanager;
 
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
+import com.google.gson.Gson;
+
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MessageNoticeService extends Service {
     KCMessagePushManager manager;
 
     @Override
     public void onCreate() {
-        Log.i("只是测试 ", "true");
+        Log.i("开始运行 service create ", "true");
     }
 
     public class LocalBinder extends Binder {
@@ -29,9 +36,30 @@ public class MessageNoticeService extends Service {
     public int onStartCommand(final Intent intent, int flags, int startId) {
         Log.i("服务开始启动了 ", "true");
 
+
+//        int delay = manager.get_delay();
+//        int period = manager.get_period();
+//
+//        Timer timer = new Timer();
+//        timer.scheduleAtFixedRate(new TimerTask() {
+//            public void run() {
+//                if (manager != null) {
+//                    show_notice(manager);
+//                }
+//
+//            }
+//        }, delay, period);
+
+        SharedPreferences mPrefs = getSharedPreferences("manager", 0);
+        Gson gson = new Gson();
+        String shared = mPrefs.getString("shared", "");
+        manager = gson.fromJson(shared, KCMessagePushManager.class);
+
         if (manager != null) {
+            Log.i("判断是否有 manager ", "true " + manager.get_listen_url());
             show_notice(manager);
         }
+
 
         return START_REDELIVER_INTENT;
     }
