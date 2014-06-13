@@ -14,10 +14,6 @@ import com.mindpin.android.noticemanager.MessageListener;
 import com.mindpin.android.noticemanager.R;
 
 
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-
 public class MainActivity extends Activity {
     KCMessagePushManager manager;
 
@@ -42,9 +38,7 @@ public class MainActivity extends Activity {
                 PendingIntent pending_intent =
                         MainActivity.this.build_pending_intent(message_response);
 
-
                 return pending_intent;
-
             }
 
         });
@@ -76,8 +70,5 @@ public class MainActivity extends Activity {
         }
         return null;
     }
-
-
-
 
 }

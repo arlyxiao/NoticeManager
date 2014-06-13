@@ -35,7 +35,7 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.UUID;
-import java.util.concurrent.atomic.AtomicInteger;
+
 
 public class KCMessagePushManager {
     Context context;
@@ -113,7 +113,6 @@ public class KCMessagePushManager {
 
 
             Random rand = new Random();
-
             int id = rand.nextInt(999999999);
             Log.i("通知 id ", Integer.toString(id));
 

@@ -8,7 +8,7 @@ class HomeController < ApplicationController
 
     title = '测试 title'
     desc = '测试 desc'
-    other = '测试 other'
+    other = '测试 other1'
 
     
     p token
