@@ -88,46 +88,36 @@ public class KCMessagePushManager {
         this.message_listener = message_listener;
     }
 
-    public void build_notification(PendingIntent p_intent, ArrayList<Message> message_response) {
+    public void build_notification(PendingIntent p_intent, Message message_response) {
         try {
             if (message_response == null) {
                 return;
             }
 
-            for (int i = 0; i < message_response.size(); i++) {
+            String title = message_response.title;
+            String desc = message_response.desc;
+            String other = message_response.other;
 
-                Message message = message_response.get(i);
-
-                String title = message.title;
-                String desc = message.desc;
-                String other = message.other;
-
-                Log.i("消息 title", title);
-                Log.i("消息 desc", desc);
-                Log.i("消息 other", other);
-
-                android.app.Notification notice =
-                        new NotificationCompat.Builder(context)
-                                .setContentTitle(title)
-                                .setContentText(desc)
-                                .setSmallIcon(get_notification_icon())
-                                .setContentIntent(p_intent)
-                                .setAutoCancel(true).getNotification();
+            android.app.Notification notice =
+                    new NotificationCompat.Builder(context)
+                            .setContentTitle(title)
+                            .setContentText(desc)
+                            .setSmallIcon(get_notification_icon())
+                            .setContentIntent(p_intent)
+                            .setAutoCancel(true).getNotification();
 
 
-                NotificationManager notificationManager =
-                        (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);
+            NotificationManager notificationManager =
+                    (NotificationManager) context.getSystemService(context.NOTIFICATION_SERVICE);
 
 
 
-                Random rand = new Random();
+            Random rand = new Random();
 
-                int id = rand.nextInt(999999999);
-                Log.i("通知 id ", Integer.toString(id));
+            int id = rand.nextInt(999999999);
+            Log.i("通知 id ", Integer.toString(id));
 
-                notificationManager.notify(id, notice);
-
-            }
+            notificationManager.notify(id, notice);
 
 
         } catch (Exception e) {

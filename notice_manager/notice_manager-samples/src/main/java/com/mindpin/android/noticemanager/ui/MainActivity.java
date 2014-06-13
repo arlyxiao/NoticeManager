@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
         manager.set_notification_icon(R.drawable.ic_launcher);
         manager.add_message_listener(new MessageListener() {
             @Override
-            public PendingIntent build_pending_intent(ArrayList<Message> message_response) {
+            public PendingIntent build_pending_intent(Message message_response) {
 
                 PendingIntent pending_intent =
                         MainActivity.this.build_pending_intent(message_response);
@@ -53,7 +53,7 @@ public class MainActivity extends Activity {
     }
 
 
-    public PendingIntent build_pending_intent(ArrayList<Message> message_response) {
+    public PendingIntent build_pending_intent(Message message_response) {
         Context context = MainActivity.this;
 
         try {

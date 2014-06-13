@@ -47,18 +47,22 @@ public class MessageNoticeService extends Service {
             }
 
             @Override
-            protected void onPostExecute(ArrayList<Message> message_response) {
-                super.onPostExecute(message_response);
+            protected void onPostExecute(ArrayList<Message> message_list) {
+                super.onPostExecute(message_list);
 
-                if (message_response == null) {
+                if (message_list == null) {
                     Log.i("无法从服务器获取消息 ", "true");
                     return;
                 }
 
-                PendingIntent p_intent = manager.message_listener
-                        .build_pending_intent(message_response);
+                for (int i = 0; i < message_list.size(); i++) {
+                    Message message_response = message_list.get(i);
+                    PendingIntent p_intent = manager.message_listener
+                            .build_pending_intent(message_response);
 
-                manager.build_notification(p_intent, message_response);
+                    manager.build_notification(p_intent, message_response);
+                }
+
             }
         }.execute();
     }
