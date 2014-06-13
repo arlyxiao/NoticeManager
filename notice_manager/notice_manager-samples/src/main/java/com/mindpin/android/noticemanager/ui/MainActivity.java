@@ -55,6 +55,9 @@ public class MainActivity extends Activity {
                 return null;
             }
 
+            // 取得 message_response 内容构建需要的消息, other: 根据需要来改
+            String other = message_response.other;
+
             final ComponentName receiver = new ComponentName(context, TargetActivity.class);
             Intent notice_intent = new Intent(context.getClass().getName() +
                     System.currentTimeMillis());
