@@ -11,8 +11,6 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
 
-import com.google.gson.Gson;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Timer;
@@ -50,13 +48,15 @@ public class MessageNoticeService extends Service {
 //            }
 //        }, delay, period);
 
-        SharedPreferences mPrefs = getSharedPreferences("manager", 0);
-        Gson gson = new Gson();
-        String shared = mPrefs.getString("shared", "");
-        manager = gson.fromJson(shared, KCMessagePushManager.class);
+//        SharedPreferences mPrefs = getSharedPreferences("manager", 0);
+//        Gson gson = new Gson();
+//        String shared = mPrefs.getString("shared", "");
+//        manager = gson.fromJson(shared, KCMessagePushManager.class);
+
+        manager = intent.getParcelableExtra("manager_obj");
 
         if (manager != null) {
-            Log.i("判断是否有 manager ", "true " + manager.get_listen_url());
+            Log.i("判断是否有 manager ", "true");
             show_notice(manager);
         }
 

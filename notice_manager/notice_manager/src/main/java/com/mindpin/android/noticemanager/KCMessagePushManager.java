@@ -14,7 +14,6 @@ import android.os.Parcelable;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
-import com.google.gson.Gson;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -29,9 +28,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.ObjectOutputStream;
 import java.io.Reader;
-import java.io.Serializable;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.net.URI;
@@ -43,36 +40,59 @@ import java.util.TimerTask;
 import java.util.UUID;
 
 
-public class KCMessagePushManager {
-    Context context;
-    public MessageListener message_listener;
+public class KCMessagePushManager implements Parcelable {
+    static Context context;
+    static MessageListener message_listener;
     public String url;
     public int period;
     public int delay;
     public int notification_icon;
 
+    @Override
+    public int describeContents() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
 
-//    @Override public int describeContents() { return 0; }
-//    @Override public void writeToParcel(Parcel dest, int flags) {}
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        // TODO Auto-generated method stub
+        dest.writeString(url);
+        dest.writeInt(period);
+        dest.writeInt(delay);
+        dest.writeInt(notification_icon);
+        dest.writeInterfaceToken(message_listener.toString());
+    }
+
+    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+        public KCMessagePushManager createFromParcel(Parcel in) {
+            return new KCMessagePushManager(in);
+        }
+
+        public KCMessagePushManager[] newArray(int size) {
+            return new KCMessagePushManager[size];
+        }
+    };
 
 
-//    public KCMessagePushManager(Parcel in) {
-//    }
+    public KCMessagePushManager(Parcel in) {
+        readFromParcel(in);
+    }
 
-//    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
-//        public KCMessagePushManager createFromParcel(Parcel in) {
-//            return new KCMessagePushManager(in);
-//        }
-//
-//        public KCMessagePushManager[] newArray(int size) {
-//            return new KCMessagePushManager[size];
-//        }
-//    };
 
 
     public KCMessagePushManager(Context context) {
-        this.context = context;
+        KCMessagePushManager.context = context;
     }
+
+    private void readFromParcel(Parcel in) {
+
+        url = in.readString();
+        period = in.readInt();
+        delay = in.readInt();
+        notification_icon = in.readInt();
+    }
+
 
     public void set_listen_url(String url) {
         this.url = url;
@@ -292,15 +312,6 @@ public class KCMessagePushManager {
 
     public void start() {
 
-        Gson gson = new Gson();
-        SharedPreferences  mPrefs = context.getSharedPreferences("manager", 0);
-        SharedPreferences.Editor prefsEditor = mPrefs.edit();
-
-        String shared = gson.toJson(this);
-        prefsEditor.putString("shared", shared);
-        prefsEditor.commit();
-
-
         int delay = get_delay();
         int period = get_period();
 
@@ -308,6 +319,7 @@ public class KCMessagePushManager {
         timer.scheduleAtFixedRate(new TimerTask() {
             public void run() {
                 Intent intent_service = new Intent(context, MessageNoticeService.class);
+                intent_service.putExtra("manager_obj", KCMessagePushManager.this);
                 context.startService(intent_service);
                 // context.bindService(intent_service, mConnection, Context.BIND_AUTO_CREATE);
             }
