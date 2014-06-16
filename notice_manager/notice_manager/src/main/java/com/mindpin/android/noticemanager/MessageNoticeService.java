@@ -34,32 +34,12 @@ public class MessageNoticeService extends Service {
     public int onStartCommand(final Intent intent, int flags, int startId) {
         Log.i("服务开始启动了 ", "true");
 
-
-//        int delay = manager.get_delay();
-//        int period = manager.get_period();
-//
-//        Timer timer = new Timer();
-//        timer.scheduleAtFixedRate(new TimerTask() {
-//            public void run() {
-//                if (manager != null) {
-//                    show_notice(manager);
-//                }
-//
-//            }
-//        }, delay, period);
-
-//        SharedPreferences mPrefs = getSharedPreferences("manager", 0);
-//        Gson gson = new Gson();
-//        String shared = mPrefs.getString("shared", "");
-//        manager = gson.fromJson(shared, KCMessagePushManager.class);
-
         manager = intent.getParcelableExtra("manager_obj");
 
         if (manager != null) {
             Log.i("判断是否有 manager ", "true");
             show_notice(manager);
         }
-
 
         return START_REDELIVER_INTENT;
     }
